@@ -1,4 +1,5 @@
-const testData = require("/Users/raramuri/Documents/webdriver_io_assignmment/test/testData/data.json")
+const players =require('../testData/data.json').player;
+var assert = require('assert').strict;
 
 /*
 This describe() block contains 1st question of the assignment. 
@@ -12,9 +13,15 @@ describe("Assignment 1",function (){
          * Assert the country field in the player's details. 
          * Increment  
          */
-        for(playerDetail in testData.player){
-            if(testData.player[playerDetail].country != "India"){
+        for(playerDetail in players){
+            /**
+             * If player's country doesn't match with string 'India' then the count increases.
+             */
+            try{
+                assert.doesNotMatch(players[playerDetail].country, /India/)
                 countForForeignPlayers += 1;
+            }catch(error){
+                console.log(players[playerDetail].name+" is not a foreign player."+"\n");
             }
             if(countForForeignPlayers > 4){
                 throw new Error("Error!! Foreign player limit is 4.");//Throw an error if foreign player count is more than 4.
@@ -27,11 +34,14 @@ describe("Assignment 1",function (){
         /**
          * Iterate through the testData.player list and 
          * assert the role field.
-         */
-        for(playerDetail in testData.player){
-            if(testData.player[playerDetail].role == "Wicket-keeper"){
+         */ 
+        for(playerDetail in players){
+            try{
+                assert.match(players[playerDetail].role, /Wicket-keeper/)
                 hasWicketKeeper = true;
                 break;
+            }catch(error){
+                console.log("\n"+players[playerDetail].name+"'s role is not Wicket-keeper.");
             }
         }
         if(!hasWicketKeeper){
@@ -39,5 +49,3 @@ describe("Assignment 1",function (){
         }
     })
 })
-
-
