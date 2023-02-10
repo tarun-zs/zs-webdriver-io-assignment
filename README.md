@@ -23,3 +23,6 @@ Reporter:
 @wdio/junit-reporter - A WebdriverIO reporter that creates test results in XML format.
 @wdio/spec-reporter - A WebdriverIO plugin to report in spec style.
 @wdio/sumologic-reporter - A WebdriverIO reporter that sends test results to Sumologic for data analyses.
+
+Test Framework:
+@wdio/mocha-framework - Adapter for Mocha testing framework.
