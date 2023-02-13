@@ -1,0 +1,10 @@
+{
+    "errorMessage1":"Foreign players limit is exceeded.",
+    "foreignPlayerLimit": 4,
+    "initialValueForCount" : 0,
+    "incrementBy1" : 1,
+    "errorMessageForTotalPlayersCount" : "Error!! Team can have only 11 players.",
+    "expectedTotalPlayerCount" : 11,
+    "countryToBeAsserted" : "India",
+    "roleToBeAsserted" : "Wicket-keeper"
+}
